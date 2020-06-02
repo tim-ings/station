@@ -1,0 +1,4 @@
+busporta stationb terminalc
+stationb busporta
+terminalc busporta junctiond
+junctiond terminalc

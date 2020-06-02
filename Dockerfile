@@ -1,17 +1,13 @@
-FROM python:3.8.3-alpine3.11
+FROM hayd/alpine-deno:1.0.0
 
 ENV TZ=Australia/Perth
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 WORKDIR /app
+USER deno
 
-COPY requirements.txt ./
-RUN pip install --no-cache-dir -r requirements.txt
+COPY ./src/ /app/src/
 
-COPY ./src/ ./src/
+RUN deno cache --unstable ./src/index.ts
 
-COPY ./time_tables/four/ ./time_tables
-
-WORKDIR /app/src
-
-CMD ["/bin/sh", "/app/src/run.sh"]
+CMD ["--unstable", "--allow-read", "--allow-net", "/app/src/index.ts"]

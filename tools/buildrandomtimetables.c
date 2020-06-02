@@ -89,7 +89,7 @@ static  int type0   = 0;
 
 static char *nodetype(int i)
 {
-    char *types[] = { "Station", "Terminal", "Junction", "Busport" };
+    char *types[] = { "station", "terminal", "junction", "busport" };
 
     return types[ (i+type0) % (sizeof(types) / sizeof(types[0])) ];
 }
@@ -99,12 +99,12 @@ static char *nodename(int i)
     static char name[4];
 
     if(N < 26) {
-        name[0] = 'A' + i%26;
+        name[0] = 'a' + i%26;
         name[1] = '\0';
     }
     else {
-        name[0] = 'A' + i%26;
-        name[1] = 'A' + (i/26)%26;
+        name[0] = 'a' + i%26;
+        name[1] = 'a' + (i/26)%26;
         name[2] = '\0';
     }
     return name;
