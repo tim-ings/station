@@ -2,9 +2,10 @@ import * as yaml from 'https://deno.land/std@0.51.0/encoding/yaml.ts';
 import { readFileStr, writeFileStr } from 'https://deno.land/std@0.51.0/fs/mod.ts';
 
 interface ComposeFileService {
-    build: string;
+    build?: string;
+    image: string;
     command: string;
-    ports: string[];
+    ports?: string[];
     volumes?: string[];
     environment?: string[];
 }
@@ -45,12 +46,18 @@ const generateDenoRun = (station: Station) =>
 const generateComposeFile = (stations: Station[], internalWebPort: number, timeTableSet: string): ComposeFile => {
     const comp = {
         version: "3",
-        services: {}
+        services: {
+            master: {
+                build: "./",
+                image: "station",
+                command: "--version",
+            }
+        }
     };
     const services = stations.map((s: Station): { [x: string]: ComposeFileService; } => {
         return {
             [s.name]: {
-                build: "./",
+                image: "station",
                 command: generateDenoRun(s),
                 ports: [`${s.port}:${internalWebPort}`],
                 volumes: [

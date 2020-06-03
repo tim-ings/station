@@ -1,0 +1,734 @@
+version: '3'
+services:
+  master:
+    build: ./
+    image: station
+    command: '--version'
+  armadale_stn:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts armadale_stn  sherwood_stn
+    ports:
+      - '4001:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  ashfield_stn:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts ashfield_stn  bassendean_stn bayswater_stn
+    ports:
+      - '4002:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  aubin_grove_stn:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts aubin_grove_stn  aubin_grove_stn cockburn_central_stn kwinana_stn
+    ports:
+      - '4003:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  bassendean_stn:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts bassendean_stn  ashfield_stn success_hill_stn
+    ports:
+      - '4004:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  bayswater_stn:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts bayswater_stn  ashfield_stn meltham_stn
+    ports:
+      - '4005:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  beckenham_stn:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts beckenham_stn  cannington_stn kenwick_stn
+    ports:
+      - '4006:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  booragoon_bus_stn:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts booragoon_bus_stn  booragoon_bus_stn
+    ports:
+      - '4007:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  bull_creek_stn:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts bull_creek_stn  canning_bridge_stn murdoch_stn
+    ports:
+      - '4008:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  burswood_stn:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts burswood_stn  claisebrook_stn victoria_park_stn
+    ports:
+      - '4009:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  butler_stn:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts butler_stn  clarkson_stn
+    ports:
+      - '4010:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  canning_bridge_stn:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts canning_bridge_stn  bull_creek_stn canning_bridge_stn elizabeth_quay_bus_stn elizabeth_quay_stn
+    ports:
+      - '4011:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  cannington_stn:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts cannington_stn  beckenham_stn oats_street_stn queens_park_stn thornlie_stn
+    ports:
+      - '4012:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  carlisle_stn:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts carlisle_stn  oats_street_stn victoria_park_stn
+    ports:
+      - '4013:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  challis_stn:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts challis_stn  kelmscott_stn sherwood_stn
+    ports:
+      - '4014:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  city_west_stn:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts city_west_stn  perth_stn west_leederville_stn
+    ports:
+      - '4015:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  claisebrook_stn:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts claisebrook_stn  burswood_stn east_perth_stn mciver_stn oats_street_stn
+    ports:
+      - '4016:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  claremont_stn:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts claremont_stn  loch_street_stn swanbourne_stn
+    ports:
+      - '4017:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  clarkson_stn:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts clarkson_stn  butler_stn clarkson_stn currambine_stn
+    ports:
+      - '4018:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  cockburn_central_stn:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts cockburn_central_stn  aubin_grove_stn murdoch_stn
+    ports:
+      - '4019:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  cottesloe_stn:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts cottesloe_stn  grant_street_stn mosman_park_stn
+    ports:
+      - '4020:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  currambine_stn:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts currambine_stn  clarkson_stn joondalup_stn
+    ports:
+      - '4021:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  curtin_central_bus_stn:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts curtin_central_bus_stn  curtin_central_bus_stn
+    ports:
+      - '4022:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  curtin_university_bus_stn:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts curtin_university_bus_stn  curtin_central_bus_stn
+    ports:
+      - '4023:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  daglish_stn:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts daglish_stn  shenton_park_stn subiaco_stn
+    ports:
+      - '4024:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  east_guildford_stn:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts east_guildford_stn  guildford_stn woodbridge_stn
+    ports:
+      - '4025:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  east_perth_stn:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts east_perth_stn  claisebrook_stn mt_lawley_stn
+    ports:
+      - '4026:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  edgewater_stn:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts edgewater_stn  joondalup_stn whitfords_stn
+    ports:
+      - '4027:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  elizabeth_quay_bus_stn:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts elizabeth_quay_bus_stn  canning_bridge_stn elizabeth_quay_bus_stn st_georges_tce_before_william_st_eastbound wellington_st_perth_stn_eastbound
+    ports:
+      - '4028:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  elizabeth_quay_stn:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts elizabeth_quay_stn  canning_bridge_stn perth_underground_stn
+    ports:
+      - '4029:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  fremantle_stn:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts fremantle_stn  fremantle_stn north_fremantle_stn
+    ports:
+      - '4030:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  glendalough_stn:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts glendalough_stn  leederville_stn stirling_stn
+    ports:
+      - '4031:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  gosnells_stn:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts gosnells_stn  maddington_stn seaforth_stn
+    ports:
+      - '4032:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  grant_street_stn:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts grant_street_stn  cottesloe_stn swanbourne_stn
+    ports:
+      - '4033:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  greenwood_stn:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts greenwood_stn  warwick_stn whitfords_stn
+    ports:
+      - '4034:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  guildford_stn:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts guildford_stn  east_guildford_stn success_hill_stn
+    ports:
+      - '4035:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  henley_brook_bus_stn:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts henley_brook_bus_stn  henley_brook_bus_stn
+    ports:
+      - '4036:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  joondalup_stn:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts joondalup_stn  currambine_stn edgewater_stn joondalup_stn
+    ports:
+      - '4037:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  kalamunda_bus_stn:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts kalamunda_bus_stn  kalamunda_bus_stn
+    ports:
+      - '4038:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  karrakatta_stn:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts karrakatta_stn  loch_street_stn shenton_park_stn
+    ports:
+      - '4039:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  karrinyup_bus_stn:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts karrinyup_bus_stn  karrinyup_bus_stn
+    ports:
+      - '4040:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  kelmscott_stn:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts kelmscott_stn  challis_stn seaforth_stn
+    ports:
+      - '4041:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  kenwick_stn:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts kenwick_stn  beckenham_stn maddington_stn
+    ports:
+      - '4042:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  kwinana_stn:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts kwinana_stn  aubin_grove_stn wellard_stn
+    ports:
+      - '4043:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  leederville_stn:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts leederville_stn  glendalough_stn perth_stn perth_underground_stn
+    ports:
+      - '4044:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  loch_street_stn:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts loch_street_stn  claremont_stn karrakatta_stn
+    ports:
+      - '4045:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  maddington_stn:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts maddington_stn  gosnells_stn kenwick_stn
+    ports:
+      - '4046:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  mandurah_stn:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts mandurah_stn  mandurah_stn warnbro_stn
+    ports:
+      - '4047:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  matagarup_bridge:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts matagarup_bridge  perth_busport
+    ports:
+      - '4048:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  maylands_stn:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts maylands_stn  meltham_stn mt_lawley_stn
+    ports:
+      - '4049:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  mciver_stn:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts mciver_stn  claisebrook_stn perth_stn
+    ports:
+      - '4050:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  meltham_stn:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts meltham_stn  bayswater_stn maylands_stn
+    ports:
+      - '4051:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  midland_stn:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts midland_stn  midland_stn woodbridge_stn
+    ports:
+      - '4052:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  mirrabooka_bus_stn:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts mirrabooka_bus_stn  mirrabooka_bus_stn
+    ports:
+      - '4053:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  morley_bus_stn:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts morley_bus_stn  morley_bus_stn
+    ports:
+      - '4054:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  mosman_park_stn:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts mosman_park_stn  cottesloe_stn victoria_street_stn
+    ports:
+      - '4055:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  mt_lawley_stn:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts mt_lawley_stn  east_perth_stn maylands_stn
+    ports:
+      - '4056:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  murdoch_stn:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts murdoch_stn  bull_creek_stn cockburn_central_stn murdoch_stn
+    ports:
+      - '4057:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  north_fremantle_stn:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts north_fremantle_stn  fremantle_stn victoria_street_stn
+    ports:
+      - '4058:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  oats_street_stn:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts oats_street_stn  cannington_stn carlisle_stn claisebrook_stn oats_street_stn queens_park_stn welshpool_stn
+    ports:
+      - '4059:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  perth_busport:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts perth_busport  matagarup_bridge perth_busport wellington_st_before_pier_st_eastbound
+    ports:
+      - '4060:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  perth_stn:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts perth_stn  city_west_stn mciver_stn
+    ports:
+      - '4061:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  perth_underground_stn:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts perth_underground_stn  elizabeth_quay_stn leederville_stn
+    ports:
+      - '4062:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  queens_park_stn:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts queens_park_stn  cannington_stn welshpool_stn
+    ports:
+      - '4063:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  rockingham_stn:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts rockingham_stn  warnbro_stn wellard_stn
+    ports:
+      - '4064:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  seaforth_stn:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts seaforth_stn  gosnells_stn kelmscott_stn
+    ports:
+      - '4065:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  shenton_park_stn:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts shenton_park_stn  daglish_stn karrakatta_stn
+    ports:
+      - '4066:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  sherwood_stn:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts sherwood_stn  armadale_stn challis_stn
+    ports:
+      - '4067:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  st_georges_tce_after_barrack_st_westbound:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts st_georges_tce_after_barrack_st_westbound  st_georges_tce_after_william_st_westbound
+    ports:
+      - '4068:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  st_georges_tce_after_irwin_st_westbound:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts st_georges_tce_after_irwin_st_westbound  st_georges_tce_after_barrack_st_westbound st_georges_tce_before_howard_st_westbound
+    ports:
+      - '4069:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  st_georges_tce_after_victoria_av_westbound:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts st_georges_tce_after_victoria_av_westbound  st_georges_tce_before_barrack_st_westbound
+    ports:
+      - '4070:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  st_georges_tce_after_william_st_eastbound:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts st_georges_tce_after_william_st_eastbound  st_georges_tce_before_irwin_st_eastbound st_georges_tce_before_pier_st_eastbound
+    ports:
+      - '4071:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  st_georges_tce_after_william_st_westbound:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts st_georges_tce_after_william_st_westbound  elizabeth_quay_bus_stn
+    ports:
+      - '4072:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  st_georges_tce_before_barrack_st_westbound:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts st_georges_tce_before_barrack_st_westbound  st_georges_tce_before_howard_st_westbound
+    ports:
+      - '4073:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  st_georges_tce_before_howard_st_westbound:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts st_georges_tce_before_howard_st_westbound  elizabeth_quay_bus_stn st_georges_tce_after_william_st_westbound
+    ports:
+      - '4074:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  st_georges_tce_before_william_st_eastbound:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts st_georges_tce_before_william_st_eastbound  st_georges_tce_after_william_st_eastbound
+    ports:
+      - '4075:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  stirling_stn:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts stirling_stn  glendalough_stn stirling_stn warwick_stn
+    ports:
+      - '4076:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  subiaco_stn:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts subiaco_stn  daglish_stn west_leederville_stn
+    ports:
+      - '4077:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  success_hill_stn:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts success_hill_stn  bassendean_stn guildford_stn
+    ports:
+      - '4078:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  swanbourne_stn:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts swanbourne_stn  claremont_stn grant_street_stn
+    ports:
+      - '4079:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  thornlie_stn:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts thornlie_stn  cannington_stn
+    ports:
+      - '4080:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  victoria_park_stn:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts victoria_park_stn  burswood_stn carlisle_stn
+    ports:
+      - '4081:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  victoria_street_stn:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts victoria_street_stn  mosman_park_stn north_fremantle_stn
+    ports:
+      - '4082:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  warnbro_stn:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts warnbro_stn  mandurah_stn rockingham_stn warnbro_stn
+    ports:
+      - '4083:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  warwick_stn:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts warwick_stn  greenwood_stn stirling_stn warwick_stn
+    ports:
+      - '4084:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  wellard_stn:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts wellard_stn  kwinana_stn rockingham_stn
+    ports:
+      - '4085:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  wellington_st_before_william_st:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts wellington_st_before_william_st  wellington_st_perth_stn_eastbound
+    ports:
+      - '4086:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  wellington_st_perth_stn_eastbound:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts wellington_st_perth_stn_eastbound  wellington_st_before_pier_st_eastbound
+    ports:
+      - '4087:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  welshpool_stn:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts welshpool_stn  oats_street_stn queens_park_stn
+    ports:
+      - '4088:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  west_leederville_stn:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts west_leederville_stn  city_west_stn subiaco_stn
+    ports:
+      - '4089:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  whitfords_stn:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts whitfords_stn  edgewater_stn greenwood_stn whitfords_stn
+    ports:
+      - '4090:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
+  woodbridge_stn:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts woodbridge_stn  east_guildford_stn midland_stn
+    ports:
+      - '4091:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/transperth:/app/timetables'
