@@ -1,0 +1,12 @@
+terminala junctionb stationd terminale stationh terminali
+junctionb terminala busportk stationl
+busportc terminali
+stationd terminala terminali
+terminale terminala
+junctionf busportg stationh stationl
+busportg junctionf terminali
+stationh terminala junctionf
+terminali terminala busportc stationd busportg junctionj
+junctionj terminali
+busportk junctionb stationl
+stationl junctionb junctionf busportk

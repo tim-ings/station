@@ -1,0 +1,102 @@
+version: '3'
+services:
+  master:
+    build: ./
+    image: station
+    command: '--version'
+  terminala:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts terminala junctionb stationd terminale stationh terminali
+    ports:
+      - '4001:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/12:/app/timetables'
+  junctionb:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts junctionb terminala busportk stationl
+    ports:
+      - '4002:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/12:/app/timetables'
+  busportc:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts busportc terminali
+    ports:
+      - '4003:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/12:/app/timetables'
+  stationd:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts stationd terminala terminali
+    ports:
+      - '4004:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/12:/app/timetables'
+  terminale:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts terminale terminala
+    ports:
+      - '4005:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/12:/app/timetables'
+  junctionf:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts junctionf busportg stationh stationl
+    ports:
+      - '4006:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/12:/app/timetables'
+  busportg:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts busportg junctionf terminali
+    ports:
+      - '4007:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/12:/app/timetables'
+  stationh:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts stationh terminala junctionf
+    ports:
+      - '4008:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/12:/app/timetables'
+  terminali:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts terminali terminala busportc stationd busportg junctionj
+    ports:
+      - '4009:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/12:/app/timetables'
+  junctionj:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts junctionj terminali
+    ports:
+      - '4010:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/12:/app/timetables'
+  busportk:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts busportk junctionb stationl
+    ports:
+      - '4011:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/12:/app/timetables'
+  stationl:
+    image: station
+    command: run --unstable --allow-read --allow-net /app/src/main.ts stationl junctionb junctionf busportk
+    ports:
+      - '4012:3000'
+    volumes:
+      - './src:/app/src'
+      - './timetables/12:/app/timetables'
