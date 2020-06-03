@@ -79,7 +79,7 @@ const startNewRoute = (from: string, to: string, at: string): Route => {
             stopName: "",
             departsAt: Number(at),
             arrivesAt: Number(at),
-            destination: to
+            destination: from
         }],
         destination: to,
         valid: false,
