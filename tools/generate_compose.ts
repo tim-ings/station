@@ -28,12 +28,9 @@ const parseAdjacencyMatrix = (adjData: string): string[][] =>
     .split("\n")
     .map((line: string) => line.split(" "));
 
-const enumerate = <T>(arr: T[]): [number, T][] => 
-    Array.from(arr.entries());
-
 const createStations = (startPort: number, adjMat: string[][]): Station[] => 
-    enumerate(adjMat)
-    .map(([idx, line]): Station => {
+    adjMat
+    .map((line, idx): Station => {
         const [name, ...neighbours] = line.map(s => s.toLowerCase());
         return { 
             name,
@@ -43,7 +40,7 @@ const createStations = (startPort: number, adjMat: string[][]): Station[] =>
     });
 
 const generateDenoRun = (station: Station) => 
-    `run --unstable --allow-read --allow-net /app/src/index.ts ${station.name} ${station.neighbours.join(" ")}`;
+    `run --unstable --allow-read --allow-net /app/src/main.ts ${station.name} ${station.neighbours.join(" ")}`;
 
 const generateComposeFile = (stations: Station[], internalWebPort: number, timeTableSet: string): ComposeFile => {
     const comp = {
