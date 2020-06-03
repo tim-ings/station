@@ -8,6 +8,6 @@ USER deno
 
 COPY ./src/ /app/src/
 
-RUN deno cache --unstable ./src/index.ts
+RUN deno cache --unstable ./src/main.ts
 
-CMD ["--unstable", "--allow-read", "--allow-net", "/app/src/index.ts"]
+CMD ["--unstable", "--allow-read", "--allow-net", "/app/src/main.ts"]

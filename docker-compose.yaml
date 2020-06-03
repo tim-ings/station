@@ -2,7 +2,7 @@ version: '3'
 services:
   busporta:
     build: ./
-    command: run --unstable --allow-read --allow-net /app/src/index.ts busporta stationb terminalc
+    command: run --unstable --allow-read --allow-net /app/src/main.ts busporta stationb terminalc
     ports:
       - '4001:3000'
     volumes:
@@ -10,7 +10,7 @@ services:
       - './timetables/four:/app/timetables'
   stationb:
     build: ./
-    command: run --unstable --allow-read --allow-net /app/src/index.ts stationb busporta
+    command: run --unstable --allow-read --allow-net /app/src/main.ts stationb busporta
     ports:
       - '4002:3000'
     volumes:
@@ -18,7 +18,7 @@ services:
       - './timetables/four:/app/timetables'
   terminalc:
     build: ./
-    command: run --unstable --allow-read --allow-net /app/src/index.ts terminalc busporta junctiond
+    command: run --unstable --allow-read --allow-net /app/src/main.ts terminalc busporta junctiond
     ports:
       - '4003:3000'
     volumes:
@@ -26,7 +26,7 @@ services:
       - './timetables/four:/app/timetables'
   junctiond:
     build: ./
-    command: run --unstable --allow-read --allow-net /app/src/index.ts junctiond terminalc
+    command: run --unstable --allow-read --allow-net /app/src/main.ts junctiond terminalc
     ports:
       - '4004:3000'
     volumes:
