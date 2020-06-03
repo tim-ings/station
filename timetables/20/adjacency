@@ -1,20 +1,20 @@
-junctiona busportj busportr
-busportb busportf terminalp terminalt
-stationc terminald busportf stationg terminalh busportn terminalp terminalt
-terminald stationc junctione stationg junctionm junctionq
-junctione terminald
-busportf busportb stationc busportn junctionq busportr
-stationg stationc terminald busportj stationk terminalp busportr terminalt
-terminalh stationc
-junctioni busportj stationk terminall busportn stationo terminalt
-busportj junctiona stationg junctioni junctionm stationo junctionq stations terminalt
-stationk stationg junctioni busportr
-terminall junctioni junctionm busportn stationo junctionq busportr
-junctionm terminald busportj terminall stations terminalt
-busportn stationc busportf junctioni terminall
-stationo junctioni busportj terminall
-terminalp busportb stationc stationg stations
-junctionq terminald busportf busportj terminall terminalt
-busportr junctiona busportf stationg stationk terminall stations
-stations busportj junctionm terminalp busportr terminalt
-terminalt busportb stationc stationg junctioni busportj junctionm junctionq stations
+terminala busporto terminalq busports
+junctionb junctionf stationl busporto
+busportc junctionf terminalm busporto
+stationd busportg stationh junctionj terminalq stationt
+terminale stationt
+junctionf junctionb busportc busportk
+busportg stationd stationh terminali stationl terminalm stationp
+stationh stationd busportg busporto terminalq junctionr
+terminali busportg busportk terminalm
+junctionj stationd stationt
+busportk junctionf terminali stationl junctionr
+stationl junctionb busportg busportk stationp terminalq stationt
+terminalm busportc busportg terminali junctionr
+junctionn junctionr
+busporto terminala junctionb busportc stationh busports
+stationp busportg stationl stationt
+terminalq terminala stationd stationh stationl busports
+junctionr stationh busportk terminalm junctionn
+busports terminala busporto terminalq
+stationt stationd terminale junctionj stationl stationp

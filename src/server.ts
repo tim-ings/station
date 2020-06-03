@@ -12,7 +12,7 @@ export interface Route {
 const last = <T>(arr: T[]) => arr ? [...arr].pop(): null;
 
 const neighbourUrl = (neighbour: string | undefined, port: number): string => 
-    `http://${neighbour}:${port}/`; 
+    `http://${neighbour}:${port}/`;
 
 const appendTrip = (route: Route, trip: Trip): Route => { 
     return { ...route, path: [...route.path, trip] }; 
