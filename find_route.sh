@@ -1,3 +1,3 @@
 #!/bin/bash
 
-curl -H "Content-Type: application/json" http://localhost:$1/ --data "{\"path\":[{\"tripName\":\"\",\"stopName\":\"\",\"departsAt\":$3,\"arrivesAt\":$3,\"destination\":\"$2\"}],\"destination\": \"$2\"}"
+curl "http://localhost:$1/?to=$2&at=$3" | jq
