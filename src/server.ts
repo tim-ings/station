@@ -30,7 +30,7 @@ const fetchNeighbour = (port: number, route: Route) => (trip: Trip | null) =>
 const fetchAllNeighbours = (route: Route, trips: Trip[], config: StationConfig) => 
     config.neighbours
     .map(bestTrip(route, trips)) // find the best trip to each neighbour
-    .filter(trip => { if (trip) return trip; }) // filter null trips
+    .filter(trip => trip !== null) // filter null trips
     .map(fetchNeighbour(config.port, route)); // create fetches
 
 const tripGoingToAfterTime = (to: string, after: number) => (trip: Trip) =>
@@ -59,11 +59,23 @@ const isLoop = (route: Route, currentStation: string) =>
     .slice(0, route.path.length - 1) 
     .find(trip => trip.destination === currentStation);
 
-const findRouteInNeighbours = async (config: StationConfig, trips: Trip[], route: Route): Promise<Route> =>
-    await Promise.all(fetchAllNeighbours(route, trips, config))
-    .then(parseReplies)
-    .then(getBestRoute) || 
-    { ...route, valid: false };
+const findRouteInNeighbours = async (config: StationConfig, trips: Trip[], route: Route): Promise<Route> => {
+    try {
+        return await Promise.all(fetchAllNeighbours(route, trips, config))
+        .then(parseReplies)
+        .then(getBestRoute) || 
+        { ...route, valid: false };
+    } catch (e) {
+        // something doesnt like sending too many TCP requests
+        // a network with 19+ stations starts to fail on my machine
+        // maybe its a docker limitation?
+        // maybe just too many fetches
+        // these long fetch chains are unlikely to have a valid
+        // route so we will just return invalid
+        return { ...route, valid: false };
+    }
+}
+    
 
 const findRoute = async (config: StationConfig, trips: Trip[], route: Route): Promise<Route> =>
     isDestinationFound(route, config.name) ? 
